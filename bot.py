@@ -16,7 +16,7 @@ load_dotenv('.env')
 
 TOKEN = os.getenv('TOKEN')
 
-
+TOKEN="5664340559:AAEwdkpzh3BWtmALqUKRwy8d11c0tT-hwuY"
 load_dotenv('.env') 
 
 #from translate import Translator

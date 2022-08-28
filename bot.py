@@ -89,7 +89,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                       port=int(os.environ.get('PORT', 5000)),
                       url_path=TOKEN,
-                      webhook_url=  + "https://telegram-dr-house-bot.herokuapp.com/"
+                      webhook_url= "https://telegram-dr-house-bot.herokuapp.com/"
                       )
     updater.idle()
 

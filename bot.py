@@ -88,7 +88,7 @@ def main():
     #updater.start_polling()
     updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
-                      url_path=  + TOKEN)
+                      url_path= TOKEN)
     updater.bot.set_webhook(f"https://{HEROKU_APP_NAME}.herokuapp.com/{TOKEN}")
     #updater.idle()
 

@@ -22,8 +22,7 @@ TOKEN = os.getenv('TOKEN')
 
 translator = Translator(service_urls=['translate.googleapis.com'])
 
-updater = Updater(TOKEN,
-				use_context=True)
+updater = Updater(TOKEN, use_context=True)
 
 def getData():
     with open('quote.json') as file:
@@ -51,18 +50,17 @@ def quote(update: Update, context: CallbackContext):
     q = "".join(q)
     translation = translator.translate(q, dest='es')
     update.message.reply_text(q)
-    update.message.reply_text(" /n")
     #print(translation.text)
     update.message.reply_text(translation.text)
 
 def help(update: Update, context: CallbackContext):
     update.message.reply_text("""Available Commands :-
-    /code - To get the source code URL
-    /linkedin - To get the LinkedIn profile URL
-    /quote - To get Dr House Quote
-    /geeks - To get the GeeksforGeeks URL""")
+    /github - To get the source code URL
+    /quote - To get Dr House Quote""")
 
-
+def github(update: Update, context: CallbackContext):
+     update.message.reply_text(
+        "github URL => https://github.com/edwight-delgado/dr_house_quote_telegram-bot")
 
 def unknown(update: Update, context: CallbackContext):
     update.message.reply_text("Sorry '%s' is not a valid command" % update.message.text)

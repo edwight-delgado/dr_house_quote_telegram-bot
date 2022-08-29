@@ -73,6 +73,8 @@ def unknown_text(update: Update, context: CallbackContext):
         "Sorry I can't recognize you , you said '%s'" % update.message.text)
   
 def main():
+    PORT = int(os.environ.get('PORT','8443'))
+    HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME')
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CommandHandler('help', help))
     updater.dispatcher.add_handler(CommandHandler('quote', quote))

@@ -85,11 +85,10 @@ def main():
     
     #updater.start_polling()
     updater.start_webhook(listen="0.0.0.0",
-                      port=int(os.environ.get('PORT', 5000)),
-                      url_path=TOKEN,
-                      webhook_url= "https://telegram-dr-house-bot.herokuapp.com/"
-                      )
-    updater.idle()
+                      port=PORT,
+                      url_path=  + TOKEN)
+    updater.bot.set_webhook(f"https://{HEROKU_APP_NAME}.herokuapp.com/{TOKEN}")
+    #updater.idle()
 
 if __name__ == '__main__':
     main()

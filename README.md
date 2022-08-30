@@ -18,14 +18,17 @@ Para ello he seguido los siguientes pasos
 ### Instalacion de modulos 
 
 installing via pip
+
 ```sh
 pip install python-telegram-bot
 ```
 
  installing via conda
+ 
 ```sh
 conda install -c conda-forge python-telegram-bot
 ```
+
 ## Obtener el TOKEN
 abrir telegram y buscar "BotFather" (oficial). Este bot es el encargado de generar otros bot y el Token id 
 Haz click en  ‘BotFather’ (first result) y escribe /newbot
@@ -142,11 +145,12 @@ Para ejecutar el script en local solo tienes que escribir
 python bot.py
 ```
 
-<p>Ir a telegram, iniciar el bot y escribir **/start** si todo esta bien tomate un café de mi parte XD</p>
+<p>Ir a telegram, iniciar el bot y escribir ** /start ** si todo esta bien tomate un café de mi parte XD</p>
 
 
 ## Subir los cambios a github
 <p>Ahora hay que subir los cambios a github. Esto es fácil. creas un repositorio y subes los cambios</p>
+
 ```sh
 git init
 git add .
@@ -158,10 +162,12 @@ git push -u origin main
 y listo. Lo próximo es usar heroku
 
 ## Hacer el deploy en heroku 
-necesitamos tener un archivo con todos los módulos y versiones de los paquetes usado en el proyecto
+Es necesario tener un archivo con todos los módulos y versiones de los paquetes usado en el proyecto.
+
 ```sh
 pip freeze > requirements.txt
 ```
+
 ### Lo segundo es crear un archivo **Procfile**
 <p>Procfile es un archivo de texto que define el comando que debe de ejecutar heroku cuando la aplicación se ejecuta
 en este caso se quiere que se ejecute el archivo bot.py </p>
@@ -173,15 +179,18 @@ web: python bot.py
 
 ### Modificamos el archivo bot.py 
 Reemplazamos  **updater.start_polling()** con el siguiente fragmento de código:
+
 ```python
 PORT = int(os.environ.get('PORT','8443'))
 HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME')
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path= TOKEN,
-		              webhook_url=f"https://{HEROKU_APP_NAME}.herokuapp.com/{TOKEN}")
+		      webhook_url=f"https://{HEROKU_APP_NAME}.herokuapp.com/{TOKEN}")
+    
     
 ```
+
 <p>Todo lo demas queda igual </p>
 
 <p>Luego use los siguientes comandos para subir los cambios a github</p>

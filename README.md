@@ -1,5 +1,5 @@
-## doctor house quotes telegram bot
-<img src="house.jpeg" alt="drawing" width="200"/>
+## Doctor House Frase telegram bot
+<img src="house.jpeg" alt="drawing" width="500"/>
 
 Este es un pequeño proyecto de construir un bot de telegram donde se muestran las frases famosas de sarcasmo del dr house.
 
@@ -205,11 +205,11 @@ git push -u origin main
 <p>Create una nueva app con el mismo nombre del proyecto </p>
 <p>Conectarse con github y buscar el nombre del repositorio en mi caso telegram-bot-dr-house-quote </p>
 
-<img src="1.png" alt="drawing" width="200"/>
+<img src="1.png" alt="drawing" width="500"/>
 <p>Luego ir a setting y en config var establecer las variables de entorno </p> 
-<img src="2.png" alt="drawing" width="200"/>
+<img src="2.png" alt="drawing" width="500"/>
 <p>Finalmente hacer el deploy</p>
-<img src="3.png" alt="drawing" width="200"/>
+<img src="3.png" alt="drawing" width="500"/>
 
 # Gracias por Llegar hasta Aquí 
-<img src="meme.jpg" alt="drawing" width="200"/>
+<img src="meme.jpg" alt="drawing" width="600"/>
